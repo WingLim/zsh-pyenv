@@ -3,7 +3,7 @@ GITHUB="https://github.com"
 [[ -z "$PYENV_HOME" ]] && export PYENV_HOME="$HOME/.pyenv"
 
 # export PATH
-export PATH="$PYENV_HOME/bin:$PATH"
+export PATH="$PYENV_HOME/bin:$PYENV_HOME/shims:$PATH"
 
 _zsh_pyenv_install() {
     echo "Installing pyenv..."
