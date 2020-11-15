@@ -16,8 +16,12 @@ _zsh_pyenv_install() {
 }
 
 _zsh_pyenv_load() {
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init -)"
+        eval "$(command pyenv virtualenv-init -)"
+        pyenv $@
+    }
 }
 
 # install pyenv if it isnt already installed
